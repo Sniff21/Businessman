@@ -1,9 +1,12 @@
 ﻿/*
  Игра, симулятор бизнессмена в консольном приложение.
  By Valentin_Bragin
+
+ ДОПИСАТЬ: Убрать баг с lvl, сделать продажу точек, сделать покупку домов и машин, настройки.
 */
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,13 +14,21 @@ namespace Businessman
 {
     class Program
     {
-        private static int exp = 0;
-        private static int lvl = 1;
+        private static int exp = 0; //приватная переменная Exp
+        private static int lvl = 1; //приватная переменная lvl
         private static int balance = 15000; //приватная переменная баланса
-        private static int balance_bank = 0;
+        private static int balance_bank = 0; //приватная переменная баланса в банке
         public static string name;
+        static List<string[]> frame = new List<string[]>();
         static void Main(string[] args) //главный метод
         {
+            string text = "Добро пожаловать в игру Бизнессмен, для продолжения нажмите ENTER. " + "\n";
+            foreach (var e in text)
+            {
+                Thread.Sleep(50);
+                Console.Write(e);
+            }
+            Console.ReadLine();
             Console.WriteLine("{0,50}","Для входа введите ваше имя.");
             Console.Write("Введите своё имя: "); name = Console.ReadLine();
             Console.Clear();
@@ -53,7 +64,7 @@ namespace Businessman
         {
             Task.Run(() => Exp());
             int question_two = 0; //переменная для выбора в меню и 
-            Console.Clear(); //очистка экрана         
+            Console.Clear(); //очистка экрана
             Console.Write("{0,30}", "Ваш баланс: " + balance);
             Console.Write("{0,35}", "Ваш Exp: " + exp);
             Console.WriteLine("{0,40}", "Ваш Lvl: " + lvl + "\n");
