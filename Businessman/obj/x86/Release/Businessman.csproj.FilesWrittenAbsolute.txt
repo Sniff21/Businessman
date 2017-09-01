@@ -1,0 +1,5 @@
+/home/valentin/Рабочий стол/Projects/Businessman/Businessman/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/valentin/Рабочий стол/Projects/Businessman/Businessman/bin/Release/Businessman.exe.mdb
+/home/valentin/Рабочий стол/Projects/Businessman/Businessman/bin/Release/Businessman.exe
+/home/valentin/Рабочий стол/Projects/Businessman/Businessman/obj/x86/Release/Businessman.exe
+/home/valentin/Рабочий стол/Projects/Businessman/Businessman/obj/x86/Release/Businessman.exe.mdb
