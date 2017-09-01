@@ -2,7 +2,7 @@
  Игра, симулятор бизнессмена в консольном приложение.
  By Valentin_Bragin
 
- ДОПИСАТЬ: Убрать баг с lvl, сделать продажу точек, сделать покупку домов и машин, настройки.
+ ДОПИСАТЬ: сделать продажу точек , настройки.
 */
 
 using System;
@@ -14,50 +14,41 @@ namespace Businessman
 {
 	class Program
 	{
+				/*Переменные*/
 		private static int exp = 0; //приватная переменная Exp
 		private static int lvl = 1; //приватная переменная lvl
 		private static int balance = 15000; //приватная переменная баланса
 		private static int balance_bank = 0; //приватная переменная баланса в банке
 		public static string name;
+		public static int question_int;
+		public static int color = 0;
+
 		static void Main(string[] args) //главный метод
 		{
 			string text = "Добро пожаловать в игру Бизнессмен, для продолжения нажмите ENTER. " + "\n";
-			foreach (var e in text)
-			{
-				Thread.Sleep(50);
-				Console.Write(e);
+			foreach (var e in text) {
+				Thread.Sleep (50);
+				Console.Write (e);
 			}
-			Console.ReadLine();
-			Console.WriteLine("{0,50}","Для входа введите ваше имя.");
-			Console.Write("Введите своё имя: "); name = Console.ReadLine();
-			Console.Clear();
-			string question = "";//вопрос о заходе в меню
-			Console.WriteLine("Привет начинающий бизнессмен! Твой баланс: " + balance + "RUB \n");
-			Console.WriteLine("Открыть меню, управление бизнессом ?");
-			Console.WriteLine("Команды: (Да) - войти (Нет) - закрытие программы  \n");
-			Console.Write("Ввод команды: ");  question = Console.ReadLine();
-			if (question == "Да" | question == "да")
-			{
-				Console.Beep();
-				Menu();
-			}
-			else if (question == "Нет" | question == "нет")
-			{
-				Console.WriteLine("Вы хотите закрыть игру ? \n");
-				Console.Write("Ввод команды: ");  question = Console.ReadLine();
-				if (question == "Да" | question == "да")
-				{
-					Environment.Exit(0);
-				}
-				else if (question == "Нет" | question == "нет")
-				{
-					Console.WriteLine("Вы будете возращены в меню!");
-					Thread.Sleep(1000);
-					Menu();
-				}
+			Console.ReadLine ();
 
+			reg1 ();
+
+			if (name == "") {
+				Console.WriteLine ("\n" + "НЕВОЗМОЖНОЕ ДЕЙСТВИЕ! Введите хотя-бы символ!" + " Осталась одна попытка!" + "\n");
+
+				Thread.Sleep (1000);
+				reg1 ();
 			}
+
+			if (name == "") {
+				Console.WriteLine ("\n" + "НЕВОЗМОЖНОЕ ДЕЙСТВИЕ! Вы исчерпали попытки!");
+				Thread.Sleep (1000);
+				Environment.Exit (0);
+			}
+				reg2 ();
 		}
+
 
 		public static void Menu() //метод меню
 		{
@@ -70,10 +61,10 @@ namespace Businessman
 			Console.WriteLine("Меню управление бизнессом: "); 
 			Console.WriteLine("1. Купить торговую точку");
 			Console.WriteLine("2. Продать торговую точку");
-			Console.WriteLine("3. Мои торговые точки");
-			Console.WriteLine("4. Моя статистика");
-			Console.WriteLine("5. Банковская ячейка");
-			Console.WriteLine ("6. Обновить экран");
+			Console.WriteLine("3. Моя статистика");
+			Console.WriteLine("4. Банковская ячейка");
+			Console.WriteLine ("5. Обновить экран");
+			Console.WriteLine ("6. Настройки игры");
 			Console.WriteLine("0. Закрыть \n");
 			Console.Write("Ввод команды: ");  question_two = Convert.ToInt32(Console.ReadLine());
 
@@ -86,17 +77,16 @@ namespace Businessman
 				SalePoint();
 				break;
 			case 3:
-				MyPoint();
+				Stat();
 				break;
 			case 4:
-				Stat();
+				Bank();
 				break;
 			case 5:
 				Bank();
 				break;
 			case 6:
-				Console.Clear ();
-				Menu ();
+				settings ();
 				break;
 			case 0:
 				string yesornot;
@@ -293,22 +283,7 @@ namespace Businessman
 				break;
 			}
 		}
-
-		public static void MyPoint() //метод моих точек
-		{
-			Console.Clear();
-			Console.WriteLine("Метод моих точек");
-			Console.WriteLine("Чтобы выйти в меню, нажмите (0)");
-			int exit = 90;
-			Console.Write("Ввод команды: "); exit = Convert.ToInt32(Console.ReadLine());
-			switch (exit)
-			{
-			case 0:
-				Menu();
-				break;
-			}
-		}
-
+			
 		public static void Stat() //метод статистики
 		{
 			Console.Clear();
@@ -385,5 +360,162 @@ namespace Businessman
 
 		}
 
+		public static void settings(){ //метод настроек
+			Console.Clear();
+			Console.WriteLine("Выберите что именно хотите настроить: " + "\n");
+			Console.WriteLine("{0,50}", "[1]Размер шрифта. " + "\t" + "[2]Цвет шрифта." + "\n");
+			Console.Write("Ввод команды: "); question_int = Convert.ToInt32 (Console.ReadLine());
+			if (question_int == 1) {
+				
+			} else if (question_int == 2) {
+				
+				Console.WriteLine ("Выберите цвет: " + "\n");
+				Console.WriteLine ("{0,50}", "[1]BLACK " + "\t" + "[2]BLUE" + "\t" + "[3]CYAN" + "\t" + "[4]DarkBlue" + "\n" +  "[5]DarkCyan" + "\t" + "[6]DarkGray" + "\t" +
+					"[7]DarkGreen" + "\t" + "[8]DarkMegenta" + "\t" + "[9]DarkRed" + "\n" + "[10]DarkYellow" + "\t" + "[11]Gray" + "\t" + "[12]Green" + "\t" + "[13]Megenta" + "\t" +
+					"[14]Red" + "\n" + "[15]White" + "\t" + "[16]Yelow" + "\t" + "[17]Yelow" + "\n");
+				Console.Write ("Ваша команда: "); color = Convert.ToInt32 (Console.ReadLine ());
+				switch(color)
+				{
+				case 1:
+					Console.ForegroundColor = ConsoleColor.Black;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 2:
+					Console.ForegroundColor = ConsoleColor.Blue;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 3:
+					Console.ForegroundColor = ConsoleColor.Cyan;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 4:
+					Console.ForegroundColor = ConsoleColor.DarkBlue;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 5:
+					Console.ForegroundColor = ConsoleColor.DarkCyan;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 6:
+					Console.ForegroundColor = ConsoleColor.DarkGray;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 7:
+					Console.ForegroundColor = ConsoleColor.DarkGreen;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 8:
+					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;	
+				case 9:
+					Console.ForegroundColor = ConsoleColor.DarkRed;					
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 10:
+					Console.ForegroundColor = ConsoleColor.DarkYellow;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 11:
+					Console.ForegroundColor = ConsoleColor.Gray;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 12:
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 13:
+					Console.ForegroundColor = ConsoleColor.Magenta;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 14:
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 15:
+					Console.ForegroundColor = ConsoleColor.White;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				case 16:
+					Console.ForegroundColor = ConsoleColor.Yellow;
+					Console.WriteLine ("Цвет успешно изменён!");
+					Thread.Sleep (1000);
+					Menu ();
+					break;
+				}
+			}
+			else {
+				Console.WriteLine ("\n"+"Вы ввели что-то не то!");
+				Thread.Sleep (500);
+				Console.Clear ();
+				settings ();
+			}
+		}
+
+
+
+		public static void reg1 (){ //метод считывание имени
+			
+			Console.WriteLine ("{0,50}", "Для входа введите ваше имя.");
+			Console.Write ("Ваше имя: ");
+			name = Console.ReadLine ();
+
+		}
+
+	public static void reg2() //метод вопроса о заходе в меню
+	{
+			Console.Clear ();
+			string question = "";//вопрос о заходе в меню
+			Console.WriteLine ("Привет начинающий бизнессмен! Твой баланс: " + balance + "RUB \n");
+			Console.WriteLine ("Открыть меню, управление бизнессом ?");
+			Console.WriteLine("Команды: (Да) - войти (Нет) - закрытие программы  \n");
+			Console.Write("Ввод команды: ");  question = Console.ReadLine();
+			if (question == "Да" | question == "да") {
+				Console.Beep ();
+				Menu ();
+			} else if (question == "Нет" | question == "нет") {
+				Console.WriteLine ("Вы хотите закрыть игру ? \n");
+				Console.Write ("Ввод команды: ");
+				question = Console.ReadLine ();
+				if (question == "Да" | question == "да") {
+					Environment.Exit (0);
+				} else if (question == "Нет" | question == "нет") {
+					Console.WriteLine ("Вы будете возращены в меню!");
+					Thread.Sleep (1000);
+					Menu ();
+					}
+				}
+			}
+		}
 	}
-}
+
