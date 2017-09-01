@@ -1,6 +1,0 @@
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Debug\Businessman.exe.config
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Debug\Businessman.exe
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Debug\Businessman.pdb
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Debug\Businessman.csprojResolveAssemblyReference.cache
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Debug\Businessman.exe
-c:\users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Debug\Businessman.pdb

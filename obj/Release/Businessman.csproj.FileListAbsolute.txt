@@ -1,7 +1,0 @@
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Release\Businessman.exe.config
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Release\Businessman.exe
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\bin\Release\Businessman.pdb
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Release\Businessman.csprojResolveAssemblyReference.cache
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Release\Businessman.exe
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Release\Businessman.pdb
-C:\Users\valen\documents\visual studio 2017\Projects\Businessman\Businessman\obj\Release\Businessman.csproj.CoreCompileInputs.cache
